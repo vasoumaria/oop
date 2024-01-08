@@ -1,7 +1,7 @@
 #include "course.h"
 
-Course :: Course(const string& c, SemesterType s, int ectspoints,const bool mand)
-        : coursename(coursename), semester(semester), ects(ects), mandatory(mandatory){
+Course :: Course(const string& c, SemesterType s, int ects,const bool mand)
+        : coursename(c), semester(s), ects(ects), mandatory(mand){
             cout << "Course created" << endl ;
         }
 
@@ -31,8 +31,14 @@ void Course::moveCourseToSemester(SemesterType newSemester) {
 }
 
 void Course::printCourseDetails() const{
+    // Ορίζουμε έναν πίνακα με τα ονόματα των εξαμήνων
+        const char* semesterNames[] = {
+            "FALL1", "FALL2", "FALL3", "FALL4", "SPRING1", "SPRING2", "SPRING3", "SPRING4"
+        };
+
+
     cout << "Course name: " << coursename << "\n"
-    << "Course Semester: " << semester << "\n"
+    << "Course Semester: " << semesterNames[static_cast<int>(semester)]  << "\n"
     << "Course Ects: " << ects << "\n"
     << "Mandatory: " << (mandatory ? "yes" : "no") << endl; 
 }

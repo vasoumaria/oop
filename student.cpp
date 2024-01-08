@@ -23,6 +23,10 @@ void Student :: printNewStudent() const {
 //total ects count initializer 
 int Student::totalEctsCount = 0;
 
+int Student::getTotalEcts() {
+    return totalEctsCount;
+}
+
 /*
 void Student::enrollStudentToCourse(Course *coursname) {
 

@@ -51,7 +51,7 @@ class Student : public Person {
 
         static int totalEctsCount ;
         void printNewStudent() const ;
-
+        static int getTotalEcts();
         //function to enroll student to a course
         //void enrollStudentToCourse(Course *coursename);
 };
