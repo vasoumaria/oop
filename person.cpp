@@ -1,19 +1,20 @@
 #include "person.h"
 
 int Person::count = 0; // Ορισμός του στατικού μέλους count
-
-Person::Person(const std::string& n, int a, const std::string& e, const std::string& g, const std::string& nat, int i)
+int Professor::n = 0;
+Person::Person(const string& n, int a, const string& e, const string& g, const string& nat, int i)
     : name(n), age(a), email(e), gender(g), nationality(nat), id(i) {
     count++;
 }
 
 
 Person::~Person() {
-    count--;  //καθε φορα που καταστρεφω ενα ατομο μειωνω τον μετριτή 
+    count--;  //καθε φορα που καταστρεφω ενα ατομο μειωνω τον μετρητή
+    //cout << "Person deleted" << endl ;
 }
 
 
-std::string Person::getName() const {
+string Person::getName() const {
     return name;   //επιστρεφω το ονομα του 
 }
 
@@ -29,12 +30,13 @@ string Person::getgender() const {
     return gender;
 }
 
-string Person::nnationality() const {
+string Person::getNationality() const {
     return nationality;
 }
 
 int Person::getId() const {
     return id;
+
 }
 
 
@@ -42,11 +44,12 @@ int Person::getId() const {
 // αντικειμένων τύπου Person. Εκτυπώνει το όνομα και την ηλικία του ατόμου.
 std:: ostream& operator << (std:: ostream& os, const Person& Person) {
     os << "Name: " << Person.name << " "<< "\n"
+        << "Age: " << Person.age<< "\n" 
         << "Email: " << Person.email << "\n"
         << "Gender: " << Person.gender << "\n"
         << "Nationality: " << Person.nationality << "\n"
-        << "ID: " << Person.id << "\n"
-        << "Age: " << Person.age<< "\n" ;
+        << "ID: " << Person.id << "\n" ;       
+        //evala to age 2o 
     return os ;
 }
 

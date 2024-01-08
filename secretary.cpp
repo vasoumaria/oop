@@ -1,4 +1,4 @@
-#include "Secretary.h"
+#include "secretary.h"
 
 // Ο κατασκευαστής της κλάσης Secretary, που δέχεται ένα μέγεθος για 
 // τον πίνακα people και δυναμικά δεσμεύει μνήμη για τον πίνακα.
@@ -32,6 +32,8 @@ bool Secretary::findPerson(const std::string& name) {
     }
     return false;
 }
+
+
 //Ο υπερφορτωμένος τελεστής εξόδου για την εκτύπωση αντικειμένων τύπου Secretary.
 std::ostream& operator<<(std::ostream& os, const Secretary& secretary) {
     for (int i = 0; i < secretary.size; i++) {
